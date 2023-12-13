@@ -47,9 +47,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nud_removeAt = new System.Windows.Forms.NumericUpDown();
             this.textB_index = new System.Windows.Forms.TextBox();
+            this.SetVal = new System.Windows.Forms.Button();
+            this.tb_setval = new System.Windows.Forms.TextBox();
+            this.numericUpDown_setval = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nud_insert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudAt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_removeAt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_setval)).BeginInit();
             this.SuspendLayout();
             // 
             // butnPrepend
@@ -210,11 +214,39 @@
             this.textB_index.Size = new System.Drawing.Size(100, 26);
             this.textB_index.TabIndex = 21;
             // 
+            // SetVal
+            // 
+            this.SetVal.Location = new System.Drawing.Point(59, 561);
+            this.SetVal.Name = "SetVal";
+            this.SetVal.Size = new System.Drawing.Size(135, 40);
+            this.SetVal.TabIndex = 22;
+            this.SetVal.Text = "butt_setval";
+            this.SetVal.UseVisualStyleBackColor = true;
+            this.SetVal.Click += new System.EventHandler(this.SetVal_Click);
+            // 
+            // tb_setval
+            // 
+            this.tb_setval.Location = new System.Drawing.Point(360, 569);
+            this.tb_setval.Name = "tb_setval";
+            this.tb_setval.Size = new System.Drawing.Size(100, 26);
+            this.tb_setval.TabIndex = 23;
+            // 
+            // numericUpDown_setval
+            // 
+            this.numericUpDown_setval.Location = new System.Drawing.Point(226, 569);
+            this.numericUpDown_setval.Name = "numericUpDown_setval";
+            this.numericUpDown_setval.Size = new System.Drawing.Size(104, 26);
+            this.numericUpDown_setval.TabIndex = 24;
+            this.numericUpDown_setval.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 623);
+            this.Controls.Add(this.numericUpDown_setval);
+            this.Controls.Add(this.tb_setval);
+            this.Controls.Add(this.SetVal);
             this.Controls.Add(this.textB_index);
             this.Controls.Add(this.nud_removeAt);
             this.Controls.Add(this.label1);
@@ -239,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_insert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudAt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_removeAt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_setval)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,6 +298,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nud_removeAt;
         private System.Windows.Forms.TextBox textB_index;
+        private System.Windows.Forms.Button SetVal;
+        private System.Windows.Forms.TextBox tb_setval;
+        private System.Windows.Forms.NumericUpDown numericUpDown_setval;
     }
 }
 

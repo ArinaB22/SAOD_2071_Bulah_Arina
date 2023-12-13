@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MyList
 {
@@ -11,7 +13,6 @@ namespace MyList
         public ListNode first;
         public ListNode last;
         public int counter = 0;
-        public int current;
 
         public string this[int index] 
         {
@@ -48,8 +49,17 @@ namespace MyList
 
         public void setValue(int index, string value) //по индексу меняет значение какому то элементу
         {
-
+            ListNode current = first;
+            if (index < 0 || index >= lenght)
+                return;
+            for (int i = 0; i < index; i++)
+            {
+                current = current.next;
+            }
+            current.val = value;
+        
         }
+
         public void Append(string val) //добавляет элемент в конец списка
         {
             ListNode node = new ListNode(); //создали элемент
@@ -73,7 +83,10 @@ namespace MyList
         {
             ListNode node = new ListNode();
             node.val = val;
-            
+
+            if (index < 0 || index >= lenght)
+                return;
+
             if (counter == 0)
             {
                 first = node;
@@ -109,6 +122,9 @@ namespace MyList
             ListNode node = new ListNode(); //создали элемент
             ListNode current = first;
             int i = 0;
+            if (index < 0 || index >= lenght)
+                return "";
+
             while (i < index)
             {
                 current = current.next;
@@ -122,7 +138,6 @@ namespace MyList
             ListNode node = new ListNode();
             node.val = val;
             ListNode current = first;
-            
             int i = 0;
             while (current.val != val)
             {
@@ -174,6 +189,8 @@ namespace MyList
             ListNode node = first;
             int choosenIndex = 0;
 
+            if (index < 0 || index >= lenght)
+                return;
 
             while (node.next != null && choosenIndex < index)
             {

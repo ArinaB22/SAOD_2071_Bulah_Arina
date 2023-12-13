@@ -48,7 +48,7 @@ namespace MyList
         private void butAt_Click(object sender, EventArgs e)
         {
             tbAt.Clear();
-            tbAt.Text = list.At((int)NudAt.Value);
+            tbAt.Text = list[(int)NudAt.Value]; 
         }
 
         private void butIndexOf_Click(object sender, EventArgs e)
@@ -67,6 +67,7 @@ namespace MyList
 
         private void butRemoveAt_Click(object sender, EventArgs e)
         {
+            
             list.RemoveAt((int)nud_removeAt.Value);
             listBoxAdd();
         }
@@ -74,6 +75,17 @@ namespace MyList
         private void butInsrt_Click(object sender, EventArgs e)
         {
             list.Insert(tb_insert.Text, (int)nud_insert.Value);
+            listBoxAdd();
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetVal_Click(object sender, EventArgs e)
+        {
+            list.setValue((int)numericUpDown_setval.Value, tb_setval.Text);
             listBoxAdd();
         }
     }
